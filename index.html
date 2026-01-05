@@ -38,45 +38,27 @@
         width: 50%; /* Short bar moving across */
       }
     </style>
-    <script>
-      // Global error handler to catch module loading errors
-      window.addEventListener('error', function(event) {
-        const root = document.getElementById('root');
-        if (root) {
-          // Don't overwrite if it's just a minor console error, only for critical failures if root is empty-ish
-          if (root.innerText === 'Loading application...') {
-             root.innerHTML = `
-              <div style="padding: 20px; color: #ef4444; font-family: monospace; background: rgba(0,0,0,0.8); border-radius: 8px; margin: 20px; border: 1px solid #dc2626;">
-                <h3 style="font-size: 1.2em; font-weight: bold; margin-bottom: 10px;">Application Error</h3>
-                <p>${event.message}</p>
-              </div>
-            `;
-          }
-        }
-      });
-    </script>
-    <script type="importmap">
+  <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@18.2.0",
-    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
-    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?deps=react@18.2.0",
-    "lucide-react": "https://esm.sh/lucide-react@0.344.0?deps=react@18.2.0",
-    "@google/genai": "https://esm.sh/@google/genai",
-    "jszip": "https://esm.sh/jszip@3.10.1",
+    "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/"
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "jszip": "https://esm.sh/jszip@^3.10.1",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
 </head>
   <body>
-    <!-- Removed flex centering classes to prevent mobile layout issues -->
     <div id="root" class="min-h-screen">
       <div class="flex items-center justify-center min-h-screen text-slate-500">
         Loading application...
       </div>
     </div>
-    <script type="module" src="index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
