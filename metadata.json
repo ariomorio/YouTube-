@@ -1,0 +1,5 @@
+{
+  "name": "YouTubeサムネイルメーカー",
+  "description": "YouTubeのサムネイルを一括取得・ダウンロード、さらにAIで分析・生成できる強力なツールです。",
+  "requestFramePermissions": []
+}
